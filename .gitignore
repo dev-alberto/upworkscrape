@@ -1,0 +1,19 @@
+cred
+*.png
+*.obj
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+__pypackages__/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
