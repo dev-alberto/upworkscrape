@@ -1,0 +1,408 @@
+<section class="job-tile air-card-hover m-0-top ng-scope" data-ng-class="{'air-card-visited': jobFeedController.isJobVisited(job)}" data-ng-click="jobFeedController.openJdSlider($event, job)" data-ng-repeat="job in jobFeedController.getCurrentJobs() track by $id(job.ciphertext + $index)">
+    <!-- ngIf: job.premium && !job.feedback -->
+    <div class="ng-isolate-scope" data-job-tile="job">
+     <!-- ngIf: jsuJobTileController.job.feedback -->
+     <!-- ngIf: !jsuJobTileController.job.feedback -->
+     <div class="ng-scope ng-isolate-scope" data-job-tile-visible="jsuJobTileController.job" data-ng-if="!jsuJobTileController.job.feedback" data-v2="jsuJobTileController.isV2">
+      <!-- ngIf: jsuJobTileVisibleController.isTileSmall() -->
+      <!-- ngIf: jsuJobTileVisibleController.isTileMedium() -->
+      <div class="ng-scope ng-isolate-scope" data-job-tile-medium="jsuJobTileVisibleController.job" data-ng-if="jsuJobTileVisibleController.isTileMedium()" data-v2="jsuJobTileVisibleController.isV2">
+       <!-- ngIf: ::jsuJobTileMediumController.job.isApplied -->
+       <!-- ngIf: ::!jsuJobTileMediumController.isV2 -->
+       <div class="clearfix ng-scope" data-ng-if="::!jsuJobTileMediumController.isV2">
+        <div class="pull-right">
+         <div class="p-sm-right d-inline-block vertical-align-top ng-isolate-scope" data-job-feedback="::jsuJobTileMediumController.job">
+          <div class="job-feedback">
+           <up-c-dropdown align="end" class="sc-up-c-dropdown-h sc-up-c-dropdown-s is-fullscreen hydrated" custom-element="" ng-on-close="jsuJobFeedbackController.onToggleDropdown(false)" ng-on-open="jsuJobFeedbackController.onToggleDropdown(true)" page-title="Feedback" secondary="">
+            <div class="up-c-dropdown sc-up-c-dropdown">
+             <up-c-on-media-change class="sc-up-c-dropdown hydrated">
+              <up-c-on-click-outside class="sc-up-c-dropdown hydrated">
+               <up-c-transition class="sc-up-c-dropdown hydrated" transition-type="modal">
+                <div class="dropdown dropdown-secondary align-end sc-up-c-dropdown">
+                 <up-c-dropdown-toggle class="sc-up-c-dropdown hydrated">
+                  <button class="btn btn-default btn-circle sc-up-c-dropdown" type="button">
+                   <span class="sc-up-c-dropdown sc-up-c-dropdown-s">
+                    <slot-fb class="sc-up-c-dropdown" hidden="" name="icon">
+                     <up-c-icon class="sc-up-c-dropdown glyph-icon hydrated" size="">
+                      <span class="sr-only">
+                       <slot-fb>
+                        more
+                       </slot-fb>
+                      </span>
+                      <up-c-load-svg class="hydrated">
+                      </up-c-load-svg>
+                      <span aria-hidden="true" class="caret glyphicon air-icon-more">
+                      </span>
+                     </up-c-icon>
+                    </slot-fb>
+                    <span slot="icon">
+                     <up-c-icon class="glyph-icon hydrated" icon="caret glyphicon air-icon-hand-no" size="">
+                      <span class="sr-only">
+                       <slot-fb>
+                       </slot-fb>
+                      </span>
+                      <up-c-load-svg class="hydrated">
+                      </up-c-load-svg>
+                      <span aria-hidden="true" class="caret glyphicon air-icon-hand-no">
+                      </span>
+                     </up-c-icon>
+                    </span>
+                   </span>
+                  </button>
+                 </up-c-dropdown-toggle>
+                 <ul class="dropdown-menu transition-content text-left sc-up-c-dropdown">
+                  <!-- ngIf: jsuJobFeedbackController.job.feedback -->
+                  <!-- ngRepeat: (feedbackSlug, feedbackText) in ::jsuJobFeedbackController.feedbackChoices track by feedbackSlug -->
+                  <li class="ng-scope" data-ng-click="jsuJobFeedbackController.saveFeedback($event, feedbackSlug)" data-ng-repeat="(feedbackSlug, feedbackText) in ::jsuJobFeedbackController.feedbackChoices track by feedbackSlug">
+                   <a class="feedback-text ng-binding" data-ng-bind="feedbackText" href="">
+                    Just not interestedrested
+                   </a>
+                  </li>
+                  <!-- end ngRepeat: (feedbackSlug, feedbackText) in ::jsuJobFeedbackController.feedbackChoices track by feedbackSlug -->
+                  <li class="ng-scope" data-ng-click="jsuJobFeedbackController.saveFeedback($event, feedbackSlug)" data-ng-repeat="(feedbackSlug, feedbackText) in ::jsuJobFeedbackController.feedbackChoices track by feedbackSlug">
+                   <a class="feedback-text ng-binding" data-ng-bind="feedbackText" href="">
+                    Vague Description
+                   </a>
+                  </li>
+                  <!-- end ngRepeat: (feedbackSlug, feedbackText) in ::jsuJobFeedbackController.feedbackChoices track by feedbackSlug -->
+                  <li class="ng-scope" data-ng-click="jsuJobFeedbackController.saveFeedback($event, feedbackSlug)" data-ng-repeat="(feedbackSlug, feedbackText) in ::jsuJobFeedbackController.feedbackChoices track by feedbackSlug">
+                   <a class="feedback-text ng-binding" data-ng-bind="feedbackText" href="">
+                    Unrealistic Expectations
+                   </a>
+                  </li>
+                  <!-- end ngRepeat: (feedbackSlug, feedbackText) in ::jsuJobFeedbackController.feedbackChoices track by feedbackSlug -->
+                  <li class="ng-scope" data-ng-click="jsuJobFeedbackController.saveFeedback($event, feedbackSlug)" data-ng-repeat="(feedbackSlug, feedbackText) in ::jsuJobFeedbackController.feedbackChoices track by feedbackSlug">
+                   <a class="feedback-text ng-binding" data-ng-bind="feedbackText" href="">
+                    Too Many Applicants
+                   </a>
+                  </li>
+                  <!-- end ngRepeat: (feedbackSlug, feedbackText) in ::jsuJobFeedbackController.feedbackChoices track by feedbackSlug -->
+                  <li class="ng-scope" data-ng-click="jsuJobFeedbackController.saveFeedback($event, feedbackSlug)" data-ng-repeat="(feedbackSlug, feedbackText) in ::jsuJobFeedbackController.feedbackChoices track by feedbackSlug">
+                   <a class="feedback-text ng-binding" data-ng-bind="feedbackText" href="">
+                    Job posted too long ago
+                   </a>
+                  </li>
+                  <!-- end ngRepeat: (feedbackSlug, feedbackText) in ::jsuJobFeedbackController.feedbackChoices track by feedbackSlug -->
+                  <li class="ng-scope" data-ng-click="jsuJobFeedbackController.saveFeedback($event, feedbackSlug)" data-ng-repeat="(feedbackSlug, feedbackText) in ::jsuJobFeedbackController.feedbackChoices track by feedbackSlug">
+                   <a class="feedback-text ng-binding" data-ng-bind="feedbackText" href="">
+                    Poor reviews about the client
+                   </a>
+                  </li>
+                  <!-- end ngRepeat: (feedbackSlug, feedbackText) in ::jsuJobFeedbackController.feedbackChoices track by feedbackSlug -->
+                  <li class="ng-scope" data-ng-click="jsuJobFeedbackController.saveFeedback($event, feedbackSlug)" data-ng-repeat="(feedbackSlug, feedbackText) in ::jsuJobFeedbackController.feedbackChoices track by feedbackSlug">
+                   <a class="feedback-text ng-binding" data-ng-bind="feedbackText" href="">
+                    Doesn't Match Skills
+                   </a>
+                  </li>
+                  <!-- end ngRepeat: (feedbackSlug, feedbackText) in ::jsuJobFeedbackController.feedbackChoices track by feedbackSlug -->
+                  <li class="ng-scope" data-ng-click="jsuJobFeedbackController.saveFeedback($event, feedbackSlug)" data-ng-repeat="(feedbackSlug, feedbackText) in ::jsuJobFeedbackController.feedbackChoices track by feedbackSlug">
+                   <a class="feedback-text ng-binding" data-ng-bind="feedbackText" href="">
+                    I am overqualified
+                   </a>
+                  </li>
+                  <!-- end ngRepeat: (feedbackSlug, feedbackText) in ::jsuJobFeedbackController.feedbackChoices track by feedbackSlug -->
+                  <li class="ng-scope" data-ng-click="jsuJobFeedbackController.saveFeedback($event, feedbackSlug)" data-ng-repeat="(feedbackSlug, feedbackText) in ::jsuJobFeedbackController.feedbackChoices track by feedbackSlug">
+                   <a class="feedback-text ng-binding" data-ng-bind="feedbackText" href="">
+                    Budget too low
+                   </a>
+                  </li>
+                  <!-- end ngRepeat: (feedbackSlug, feedbackText) in ::jsuJobFeedbackController.feedbackChoices track by feedbackSlug -->
+                  <li class="ng-scope" data-ng-click="jsuJobFeedbackController.saveFeedback($event, feedbackSlug)" data-ng-repeat="(feedbackSlug, feedbackText) in ::jsuJobFeedbackController.feedbackChoices track by feedbackSlug">
+                   <a class="feedback-text ng-binding" data-ng-bind="feedbackText" href="">
+                    Not in my preferred location
+                   </a>
+                  </li>
+                  <!-- end ngRepeat: (feedbackSlug, feedbackText) in ::jsuJobFeedbackController.feedbackChoices track by feedbackSlug -->
+                  <li class="p-md-left-right p-sm-top-bottom m-sm-left">
+                   <small class="text-muted">
+                    The client will not be notified. Your feedback helps us improve job search.
+                   </small>
+                  </li>
+                 </ul>
+                </div>
+               </up-c-transition>
+               <div class="initial-menu sc-up-c-dropdown sc-up-c-dropdown-s">
+                <ul class="dropdown-menu" slot="menu">
+                </ul>
+               </div>
+              </up-c-on-click-outside>
+             </up-c-on-media-change>
+             <up-c-fullscreen class="sc-up-c-dropdown hydrated">
+             </up-c-fullscreen>
+            </div>
+           </up-c-dropdown>
+          </div>
+         </div>
+         <!-- ngIf: ::!jsuJobTileMediumController.isClient() -->
+         <div class="d-inline-block ng-scope ng-isolate-scope" data-job-save="::jsuJobTileMediumController.job" data-ng-if="::!jsuJobTileMediumController.isClient()">
+          <!-- ngIf: !jsuJobSaveController.responsive -->
+          <button class="job-save-button btn-circle ng-pristine ng-untouched ng-valid ng-scope ng-isolate-scope eo-button-save btn btn-default pull-right ng-not-empty" data-eo-change="jsuJobSaveController.onJobSaveClick()" data-eo-save-button="" data-ng-class="{'pull-right': !jsuJobSaveController.label}" data-ng-click="$event.stopPropagation()" data-ng-if="!jsuJobSaveController.responsive" data-ng-model="jsuJobSaveController.job.isSaved" style="">
+           <span class="glyphicon m-0-left ng-scope air-icon-favorite-deactivated" ng-class="{'air-icon-favorite-activated': isActive(), 'air-icon-favorite-deactivated': !isActive()}">
+           </span>
+           <!-- ngIf: jsuJobSaveController.label -->
+          </button>
+          <!-- end ngIf: !jsuJobSaveController.responsive -->
+          <!-- ngIf: jsuJobSaveController.responsive -->
+         </div>
+         <!-- end ngIf: ::!jsuJobTileMediumController.isClient() -->
+        </div>
+        <!-- ngIf: ::jsuJobTileMediumController.hasPreviousClient() -->
+        <h4 class="job-title m-0 p-sm-right ng-isolate-scope" data-job-title="::jsuJobTileMediumController.job">
+         <a class="job-title-link break visited ng-binding" data-itemprop="url" data-ng-bind-html="jsuJobTitleController.job.title|truncateHtmlByWords:jsuJobTitleController.getWordsThreshold()" data-ng-class="{'text-muted': jsuJobTitleController.isHidden}" data-ng-click="jsuJobTitleController.onJobTitleClick($event)" data-ng-href="/jobs/Add-Login-page-the-existing-website-Python_~010cb996219b3e809f/" href="/jobs/Add-Login-page-the-existing-website-Python_~010cb996219b3e809f/">
+          Add Login page the existing website in Python
+         </a>
+        </h4>
+       </div>
+       <!-- end ngIf: ::!jsuJobTileMediumController.isV2 -->
+       <!-- ngIf: ::!jsuJobTileMediumController.isV2 -->
+       <div class="row ng-scope" data-ng-if="::!jsuJobTileMediumController.isV2">
+        <div class="col-md-12">
+         <small class="text-muted display-inline-block m-sm-top">
+          <span class="ng-isolate-scope" data-job-type="::jsuJobTileMediumController.job">
+           <!-- ngIf: ::jsuJobTypeController.isHourly() -->
+           <!-- ngIf: ::jsuJobTypeController.isHourlyRange() -->
+           <!-- ngIf: ::jsuJobTypeController.isFixed() -->
+           <strong class="js-type ng-scope" data-ng-if="::jsuJobTypeController.isFixed()">
+            Fixed-price
+           </strong>
+           <!-- end ngIf: ::jsuJobTypeController.isFixed() -->
+           <!-- ngIf: ::jsuJobTypeController.isFixedRange() -->
+           <!-- ngIf: ::jsuJobTypeController.isWeekly() -->
+          </span>
+          <span class="ng-isolate-scope" data-job-tier="::jsuJobTileMediumController.job">
+           <!-- ngIf: ::jsuJobTierController.hasTier() -->
+           <span class="js-contractor-tier ng-binding ng-scope" data-ng-if="::jsuJobTierController.hasTier()">
+            - Expert
+           </span>
+           <!-- end ngIf: ::jsuJobTierController.hasTier() -->
+          </span>
+          <span class="ng-isolate-scope" data-job-budget="::jsuJobTileMediumController.job">
+           <!-- ngIf: ::jsuJobBudgetController.isWeekly() -->
+           <!-- ngIf: ::jsuJobBudgetController.isFixed() -->
+           <span class="js-budget ng-scope" data-ng-if="::jsuJobBudgetController.isFixed()">
+            -
+            <!-- ngIf: ::!jsuJobBudgetController.isShortFormat -->
+            <span class="ng-scope" data-ng-if="::!jsuJobBudgetController.isShortFormat">
+             Est. Budget:
+            </span>
+            <!-- end ngIf: ::!jsuJobBudgetController.isShortFormat -->
+            <!-- ngIf: ::jsuJobBudgetController.job.amount.amount -->
+            <span class="ng-binding ng-scope" data-ng-if="::jsuJobBudgetController.job.amount.amount">
+             $120
+            </span>
+            <!-- end ngIf: ::jsuJobBudgetController.job.amount.amount -->
+            <!-- ngIf: ::!jsuJobBudgetController.job.amount.amount -->
+           </span>
+           <!-- end ngIf: ::jsuJobBudgetController.isFixed() -->
+           <!-- ngIf: ::jsuJobBudgetController.isFixedRange() -->
+          </span>
+          <span class="ng-isolate-scope" data-job-duration="::jsuJobTileMediumController.job">
+           <!-- ngIf: ::jsuJobDurationController.isHourly() -->
+          </span>
+          -
+          <span class="ng-isolate-scope" data-job-posted-time="::jsuJobTileMediumController.job">
+           <span class="js-posted">
+            <!-- ngIf: ::!jsuJobPostedTimeController.isShortFormat -->
+            <span class="ng-binding ng-scope" data-ng-if="::!jsuJobPostedTimeController.isShortFormat">
+             Posted
+            </span>
+            <!-- end ngIf: ::!jsuJobPostedTimeController.isShortFormat -->
+            <time class="ng-isolate-scope" data-eo-relative="2021-06-28T08:36:45+00:00" data-short="::jsuJobPostedTimeController.isShortFormat" datetime="2021-06-28T08:36:45+00:00">
+             10 hours ago
+            </time>
+           </span>
+          </span>
+         </small>
+         <!-- ngIf: ::jsuJobTileMediumController.isClientActivelyHiringSignal() -->
+         <div class="m-sm-top ng-isolate-scope" data-job-location-requirement="::jsuJobTileMediumController.job">
+          <!-- ngIf: ::jsuJobLocationRequirementController.isActive() -->
+         </div>
+         <div class="m-sm-top ng-isolate-scope" data-job-description="::jsuJobTileMediumController.job">
+          <div class="description break" data-ng-click="jsuJobDescriptionController.onDescriptionClick($event)">
+           <div class="m-sm-bottom ng-isolate-scope" data-eo-chars-threshold="250" data-eo-on-truncation-toggle="::jsuJobDescriptionController.eoOnTruncationToggle" data-eo-truncation-html-unsafe="::jsuJobDescriptionController.job.description">
+            <span class="" data-ng-show="!isOpen">
+             <span class="ng-binding" data-ng-bind-html="truncatedHtml">
+              Add Login page the existing website in Python
+   
+   website is already done.
+   You add just one page - login page.
+   Our house developer will work with you, help you.
+   
+   We should create Admin where the Administrator is able to change password.
+   
+   This is an urge ...
+             </span>
+             <!-- ngIf: truncationMade -->
+             <a class="eo-truncate-toggle-text eo-truncate-toggle-text-open ng-binding ng-scope" data-ng-click="toggle()" data-ng-if="truncationMade" href="javascript:void(0)">
+              more
+             </a>
+             <!-- end ngIf: truncationMade -->
+            </span>
+            <span class="ng-hide" data-ng-show="isOpen">
+             <span class="ng-binding" data-ng-bind-html="htmlToTruncate">
+              Add Login page the existing website in Python
+   
+   website is already done.
+   You add just one page - login page.
+   Our house developer will work with you, help you.
+   
+   We should create Admin where the Administrator is able to change password.
+   
+   This is an urgent job, also you can do this within one day.
+             </span>
+             <a class="eo-truncate-toggle-text eo-truncate-toggle-text-open ng-binding" data-ng-click="toggle()" href="javascript:void(0)">
+              less
+             </a>
+            </span>
+           </div>
+           <!-- ngIf: jsuJobDescriptionController.areAttrsVisible() -->
+           <span class="m-sm-top m-md-bottom ng-scope ng-isolate-scope" data-job-sands-attrs="jsuJobDescriptionController.job" data-ng-if="jsuJobDescriptionController.areAttrsVisible()">
+            <div class="js-skills skills">
+             <!-- ngRepeat: attr in jsuJobSandsAttrsController.attrs
+                                 | limitTo:jsuJobSandsAttrsController.getLimitTo()
+                                 track by $index -->
+             <span class="js-skill d-inline-block ng-scope" data-ng-repeat="attr in jsuJobSandsAttrsController.attrs
+                                 | limitTo:jsuJobSandsAttrsController.getLimitTo()
+                                 track by $index">
+              <!-- ngIf: attr.skillType == jsuJobSandsAttrsController.skillType.LEGACY && jsuJobSandsAttrsController.hasHoverState() -->
+              <!-- ngIf: attr.skillType == jsuJobSandsAttrsController.skillType.LEGACY && !jsuJobSandsAttrsController.hasHoverState() -->
+              <!-- ngIf: attr.skillType != jsuJobSandsAttrsController.skillType.LEGACY && !attr.freeText -->
+              <a class="o-tag-skill nowrap d-mobile-pointer-events-none ng-scope" data-ng-click="jsuJobSandsAttrsController.onJobAttrClick($event, attr)" data-ng-href="/ab/jobs/search/?ontology_skill_uid=1031626732309299200" data-ng-if="attr.skillType != jsuJobSandsAttrsController.skillType.LEGACY &amp;&amp; !attr.freeText" href="/ab/jobs/search/?ontology_skill_uid=1031626732309299200">
+               <span class="ng-binding" data-ng-class="::{highlight: attr.highlighted}">
+                Django
+               </span>
+              </a>
+              <!-- end ngIf: attr.skillType != jsuJobSandsAttrsController.skillType.LEGACY && !attr.freeText -->
+              <!-- ngIf: attr.skillType != jsuJobSandsAttrsController.skillType.LEGACY && attr.freeText -->
+             </span>
+             <!-- end ngRepeat: attr in jsuJobSandsAttrsController.attrs
+                                 | limitTo:jsuJobSandsAttrsController.getLimitTo()
+                                 track by $index -->
+             <span class="js-skill d-inline-block ng-scope" data-ng-repeat="attr in jsuJobSandsAttrsController.attrs
+                                 | limitTo:jsuJobSandsAttrsController.getLimitTo()
+                                 track by $index">
+              <!-- ngIf: attr.skillType == jsuJobSandsAttrsController.skillType.LEGACY && jsuJobSandsAttrsController.hasHoverState() -->
+              <!-- ngIf: attr.skillType == jsuJobSandsAttrsController.skillType.LEGACY && !jsuJobSandsAttrsController.hasHoverState() -->
+              <!-- ngIf: attr.skillType != jsuJobSandsAttrsController.skillType.LEGACY && !attr.freeText -->
+              <a class="o-tag-skill nowrap d-mobile-pointer-events-none ng-scope" data-ng-click="jsuJobSandsAttrsController.onJobAttrClick($event, attr)" data-ng-href="/ab/jobs/search/?ontology_skill_uid=996364628025274386" data-ng-if="attr.skillType != jsuJobSandsAttrsController.skillType.LEGACY &amp;&amp; !attr.freeText" href="/ab/jobs/search/?ontology_skill_uid=996364628025274386">
+               <span class="ng-binding" data-ng-class="::{highlight: attr.highlighted}">
+                Python
+               </span>
+              </a>
+              <!-- end ngIf: attr.skillType != jsuJobSandsAttrsController.skillType.LEGACY && !attr.freeText -->
+              <!-- ngIf: attr.skillType != jsuJobSandsAttrsController.skillType.LEGACY && attr.freeText -->
+             </span>
+             <!-- end ngRepeat: attr in jsuJobSandsAttrsController.attrs
+                                 | limitTo:jsuJobSandsAttrsController.getLimitTo()
+                                 track by $index -->
+             <!-- ngIf: jsuJobSandsAttrsController.hasMoreThanLimit() -->
+            </div>
+           </span>
+           <!-- end ngIf: jsuJobDescriptionController.areAttrsVisible() -->
+          </div>
+         </div>
+         <div>
+          <span class="ng-isolate-scope" data-job-proposals="jsuJobTileMediumController.job.proposalsTier">
+           <!-- ngIf: jsuJobProposalsController.proposalsTier -->
+           <small class="display-inline-block m-md-right ng-scope" data-ng-if="jsuJobProposalsController.proposalsTier">
+            <span class="text-muted">
+             Proposals:
+            </span>
+            <strong class="ng-binding" data-ng-bind="jsuJobProposalsController.proposalsTier">
+             20 to 50
+            </strong>
+           </small>
+           <!-- end ngIf: jsuJobProposalsController.proposalsTier -->
+          </span>
+          <span class="ng-isolate-scope" data-job-freelancers-to-hire="::jsuJobTileMediumController.job.freelancersToHire">
+           <!-- ngIf: ::jsuJobFreelancersToHireController.freelancersToHire > 1 -->
+           <small class="display-inline-block m-md-right ng-scope" data-ng-if="::jsuJobFreelancersToHireController.freelancersToHire &gt; 1">
+            <span class="text-muted">
+             Number of freelancers needed:
+            </span>
+            <strong class="ng-binding">
+             3
+            </strong>
+           </small>
+           <!-- end ngIf: ::jsuJobFreelancersToHireController.freelancersToHire > 1 -->
+          </span>
+         </div>
+         <!-- ngIf: ::jsuJobTileMediumController.job.clientRelation -->
+         <!-- ngIf: ::jsuJobTileMediumController.job.client -->
+         <small class="ng-scope" data-ng-if="::jsuJobTileMediumController.job.client">
+          <span class="ng-isolate-scope" data-job-client-info="::jsuJobTileMediumController.job">
+           <!-- ngIf: ::!jsuJobClientInfoController.shouldShowPreviousClientInfo() -->
+           <span class="ng-scope" data-ng-if="::!jsuJobClientInfoController.shouldShowPreviousClientInfo()">
+            <!-- ngIf: jsuJobClientInfoController.job.plusBadge -->
+            <span class="ng-isolate-scope" data-job-enterprise-badge="::jsuJobClientInfoController.job">
+             <!-- ngIf: ::jsuJobEnterpriseBadgeController.job.enterpriseJob -->
+            </span>
+            <span class="ng-isolate-scope" data-job-client-payment-verified="::jsuJobClientInfoController.job.client.paymentVerificationStatus">
+             <!-- ngIf: ::jsuJobClientPaymentVerifiedController.verificationStatus == 1 -->
+             <span class="payment-status badge badge-verified m-sm-right p-md-left ng-scope" data-ng-if="::jsuJobClientPaymentVerifiedController.verificationStatus == 1">
+              <span aria-hidden="true" class="glyphicon air-icon-verified">
+              </span>
+              <strong class="text-muted">
+               <!-- ngIf: ::!jsuJobClientPaymentVerifiedController.isShortFormat -->
+               <small class="ng-scope" data-ng-if="::!jsuJobClientPaymentVerifiedController.isShortFormat">
+                Payment verified
+               </small>
+               <!-- end ngIf: ::!jsuJobClientPaymentVerifiedController.isShortFormat -->
+               <!-- ngIf: ::jsuJobClientPaymentVerifiedController.isShortFormat -->
+              </strong>
+             </span>
+             <!-- end ngIf: ::jsuJobClientPaymentVerifiedController.verificationStatus == 1 -->
+             <!-- ngIf: ::jsuJobClientPaymentVerifiedController.verificationStatus != 1 -->
+            </span>
+            <span class="ng-isolate-scope" data-job-client-feedback="::jsuJobClientInfoController.job.client">
+             <span class="js-feedback display-inline-block">
+              <span class="ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty" data-eo-popover-html-unsafe="4.22 Stars, based on 107 feedbacks" data-eo-popover-popup-delay="300" data-eo-popover-trigger="mouseenter" data-eo-rating="" data-ng-model="::jsuJobClientFeedbackController.client.totalFeedback" data-rating-define="star" data-read-only="true" data-star-radius="5" data-stars="5" eo-popover-id="1409">
+               <div class="stars" ng-mouseleave="leaveRating()" ng-mousemove="changeRating($event)" style="visibility: visible;">
+                <canvas class="star ng-scope" height="10" ng-click="secureNewRating()" width="50">
+                </canvas>
+               </div>
+              </span>
+             </span>
+            </span>
+            <!-- ngIf: ::!jsuJobClientInfoController.job.client.hasFinancialPrivacy -->
+            <span class="m-sm-left-right ng-scope ng-isolate-scope" data-job-client-spent-tier="::jsuJobClientInfoController.job.client.totalSpent" data-ng-if="::!jsuJobClientInfoController.job.client.hasFinancialPrivacy">
+             <span class="client-spendings display-inline-block">
+              <strong class="ng-binding" data-ng-bind="::jsuJobClientSpentTierController.totalSpent|moneyRange">
+               $70k+
+              </strong>
+              <span class="text-muted">
+               spent
+              </span>
+             </span>
+            </span>
+            <!-- end ngIf: ::!jsuJobClientInfoController.job.client.hasFinancialPrivacy -->
+            <span class="ng-isolate-scope" data-job-client-location="::jsuJobClientInfoController.job.client.location.country">
+             <!-- ngIf: ::jsuJobClientLocationController.country -->
+             <span class="nowrap ng-scope" data-ng-if="::jsuJobClientLocationController.country">
+              <span aria-hidden="true" class="glyphicon air-icon-location m-0">
+              </span>
+              <strong class="text-muted client-location ng-binding" data-ng-bind="::jsuJobClientLocationController.country">
+               Japan
+              </strong>
+             </span>
+             <!-- end ngIf: ::jsuJobClientLocationController.country -->
+            </span>
+           </span>
+           <!-- end ngIf: ::!jsuJobClientInfoController.shouldShowPreviousClientInfo() -->
+          </span>
+         </small>
+         <!-- end ngIf: ::jsuJobTileMediumController.job.client -->
+         <span class="talent-clouds ng-isolate-scope" data-clouds-list="::jsuJobTileMediumController.job">
+          <!-- ngIf: cloudsList.clouds -->
+         </span>
+        </div>
+       </div>
+       <!-- end ngIf: ::!jsuJobTileMediumController.isV2 -->
+       <!-- ngIf: ::jsuJobTileMediumController.isV2 -->
+      </div>
+      <!-- end ngIf: jsuJobTileVisibleController.isTileMedium() -->
+     </div>
+     <!-- end ngIf: !jsuJobTileController.job.feedback -->
+    </div>
+   </section>
+   
